@@ -11,4 +11,8 @@ export class DataHandlerService {
 
 
   constructor(private http: HttpClient) { }
+
+  public getPokemon(){
+    this.http.get<Pokemon[]>(this._pokemonUrl).subscribe(data => this.pokemon = data);
+  }
 }

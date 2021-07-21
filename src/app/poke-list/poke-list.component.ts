@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataHandlerService } from '../data-handler.service';
 
 @Component({
   selector: 'app-poke-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokeListComponent implements OnInit {
 
-  constructor() { }
+  constructor( public data:DataHandlerService) { }
 
   ngOnInit(): void {
   }
