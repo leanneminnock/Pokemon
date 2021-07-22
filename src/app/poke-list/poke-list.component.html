@@ -2,11 +2,30 @@
     <div class="card-header">
         I Choose You!
     </div>
-    <div class="card-body">
-        <ul class="list-group list-group-flush" *ngFor="let poke of data.pokemon">
+    <div class="card-body" *ngIf="data.AllPokemon">
+        <ul class="list-group list-group-flush" *ngFor="let poke of data.AllPokemon.results">
             <li class="list-group-item">
                {{poke.name}}
             </li>
         </ul>
     </div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only disabled" >Previous</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
 </div>
