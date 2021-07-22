@@ -8,9 +8,10 @@ import { DataHandlerService } from '../data-handler.service';
 })
 export class PokeListComponent implements OnInit {
 
-  constructor( public data:DataHandlerService) { }
+  constructor( public data: DataHandlerService) { }
 
   ngOnInit(): void {
+    this.data.getAllPokemon();
   }
 
 }

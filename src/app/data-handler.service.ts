@@ -1,18 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { GetAllPokemonResponse } from './modals/get-all-pokemon-response';
 import { Pokemon } from './modals/pokemon';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataHandlerService {
-  private _pokemonUrl = "https://github.com/mtrdp642/PokeApiNet.git";
-  public pokemon: Pokemon[] = [];
-
+  private _pokemonUrl = "https://pokeapi.co/api/v2/pokemon/";
+  public AllPokemon: GetAllPokemonResponse | null = null;
+  public Previous?: string | null = null;
 
   constructor(private http: HttpClient) { }
 
-  public getPokemon(){
-    this.http.get<Pokemon[]>(this._pokemonUrl).subscribe(data => this.pokemon = data);
+  public getAllPokemon(){
+    this.http.get<GetAllPokemonResponse>(this._pokemonUrl).subscribe(data => this.AllPokemon = data);
   }
 }
