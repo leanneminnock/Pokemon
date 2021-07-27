@@ -9,11 +9,15 @@ import { Pokemon } from './modals/pokemon';
 export class DataHandlerService {
   private _pokemonUrl = "https://pokeapi.co/api/v2/pokemon/";
   public AllPokemon: GetAllPokemonResponse | null = null;
-  public Previous?: string | null = null;
+  public pokemon: Pokemon | undefined;
 
   constructor(private http: HttpClient) { }
 
   public getAllPokemon(){
     this.http.get<GetAllPokemonResponse>(this._pokemonUrl).subscribe(data => this.AllPokemon = data);
   }
+
+  public getPokemonByName(name: string){
+   return this.http.get<Pokemon>(this._pokemonUrl + name);
+  }        
 }
