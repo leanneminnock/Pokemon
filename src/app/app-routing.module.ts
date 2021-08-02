@@ -9,9 +9,9 @@ const routes: Routes = [
     component: PokeListComponent
   },
   {
-    path: "pokemon/:pokeName",
-    component: PokemonDetailedViewComponent
-  }
+    path: ":pokeName",
+    component: PokeListComponent
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

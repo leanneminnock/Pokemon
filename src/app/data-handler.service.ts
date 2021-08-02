@@ -13,11 +13,12 @@ export class DataHandlerService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllPokemon(){
-    this.http.get<GetAllPokemonResponse>(this._pokemonUrl).subscribe(data => this.AllPokemon = data);
+  public getAllPokemon(offset: number = 0, limit: number = 20){
+    this.http.get<GetAllPokemonResponse>(this._pokemonUrl + `?offset=${offset}&limit=${limit}`).subscribe(data => this.AllPokemon = data);
   }
 
   public getPokemonByName(name: string){
    return this.http.get<Pokemon>(this._pokemonUrl + name);
   }        
 }
+
