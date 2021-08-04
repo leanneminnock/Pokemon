@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { PokeListComponent } from './poke-list/poke-list.component';
 import { PokemonDetailedViewComponent } from './pokemon-detailed-view/pokemon-detailed-view.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { PokeTypesComponentComponent } from './poke-types-component/poke-types-component.component';
+import { PokeTypesComponent } from './poke-types/poke-types.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { PokeTypesComponentComponent } from './poke-types-component/poke-types-c
     PokeListComponent,
     PokemonDetailedViewComponent,
     NavbarComponent,
-    PokeTypesComponentComponent
+    PokeTypesComponent
   ],
   imports: [
     BrowserModule,
