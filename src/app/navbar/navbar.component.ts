@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataHandlerService } from '../data-handler.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public data: DataHandlerService) { }
 
   ngOnInit(): void {
+    this.data.getAllTypes();
   }
 
 }
