@@ -18,7 +18,7 @@
                         Types
                     </a>
                     <ul class="dropdown-menu  dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                        <li *ngFor="let type of data.allTypes.results"><a class="dropdown-item" >{{type.name}}</a></li>
+                        <li *ngFor="let type of data.allTypes.results" [routerLink]="['/type', type.name]"><a class="dropdown-item">{{type.name}}</a></li>
                     </ul>
                 </li>
             </ul>
