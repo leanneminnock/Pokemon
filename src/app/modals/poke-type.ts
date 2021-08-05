@@ -83,7 +83,7 @@
             slot: number;
         }
     
-        export interface RootObject {
+        export interface PokeTypeInfo {
             damage_relations: DamageRelations;
             game_indices: GameIndice[];
             generation: Generation2;
