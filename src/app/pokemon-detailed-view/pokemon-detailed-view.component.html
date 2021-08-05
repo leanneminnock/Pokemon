@@ -3,12 +3,14 @@
         I Choose You!!
     </div>
     <div class="card-body text-capitalize" *ngIf="pokemon">
+        <img src={{pokemon.sprites.front_default}} alt="">
+        <img src={{pokemon.sprites.front_shiny}} alt="">
        <h5>{{pokemon.name}}</h5> 
            Pokedex Number: {{pokemon.id}} <br>
            Base Experience: {{pokemon.base_experience}} <br>
            Type:
-           <ul class="list-group list-group-flush" >
-               <li class="list-group-item" *ngFor="let type of pokemon.types">{{type.type.name}}</li>
+           <ul class="list-group list-group-flush">
+               <li class="list-group-item list-group-item-action" *ngFor="let type of pokemon.types" [routerLink]="['/type', type.type.name]">{{type.type.name}}</li>
            </ul>
            Abilities:
            <ul class="list-group list-group-flush" >
