@@ -1,0 +1,4 @@
+.bg-gradient {
+height: 100vh;
+background-image: var(--bs-info);
+}
